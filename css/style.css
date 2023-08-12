@@ -1,0 +1,216 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+@font-face {
+  font-family: "Red Hat Display";
+  font-display: swap;
+  src: local("Red Hat Display"), url("../fonts/redhatdisplay-variablefont_wght-webfont.woff2") format("woff2"), url("../fonts/redhatdisplay-variablefont_wght-webfont.woff") format("woff");
+  font-weight: 100 900;
+}
+html {
+  font-size: 16px;
+}
+
+:is(.plan span,
+.change,
+.proceed,
+.cancel) {
+  font-weight: 700;
+}
+
+body {
+  font-family: "Red Hat Display", sans-serif;
+  font-weight: 500;
+  text-align: center;
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: 900;
+}
+
+.description {
+  word-spacing: 0.2rem;
+  line-height: 2rem;
+}
+
+.plan {
+  line-height: 1.5rem;
+}
+
+.proceed {
+  font: inherit;
+}
+
+body {
+  width: 100%;
+  min-height: 100dvh;
+  color: hsl(224, 23%, 55%);
+  background-color: hsl(225, 100%, 94%);
+}
+
+.grid-flow {
+  display: grid;
+  place-items: center;
+}
+
+.shape-wrapper {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: -1;
+}
+.shape-wrapper > * {
+  width: 100%;
+}
+
+@media only screen and (min-width: 50rem) {
+  .shape-mobile {
+    display: none;
+  }
+}
+
+.shape-desktop {
+  display: none;
+}
+@media only screen and (min-width: 50rem) {
+  .shape-desktop {
+    display: block;
+  }
+}
+
+.card {
+  --_box-shadow-color: 224, 23%, 55%, 0.3;
+  --_hover-color-blue: 245, 75%, 52%, 0.825;
+  width: min(22rem, 90%);
+  height: min(40rem, 87.5%);
+  grid-template-rows: 25%;
+  background-color: hsl(225, 100%, 98%);
+  border-radius: 1.25rem;
+  box-shadow: 0 0.275rem 2rem 0 hsla(var(--_box-shadow-color));
+}
+.card > * {
+  width: 85%;
+}
+
+.music-banner {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 1.25rem 1.25rem 0 0;
+}
+
+.intro {
+  align-items: end;
+  height: 100%;
+  margin-top: 0.75rem;
+}
+
+.title {
+  color: hsl(223, 47%, 23%);
+}
+
+.plan-wrapper {
+  --_pale-blue: 225, 100%, 94%, 0.3;
+  box-sizing: border-box;
+  justify-items: left;
+  grid-auto-flow: column;
+  padding: 1rem;
+  background-color: hsla(var(--_pale-blue));
+  border-radius: 0.75rem;
+}
+
+.plan {
+  width: min-content;
+}
+.plan span {
+  color: hsl(223, 47%, 23%);
+}
+
+.change {
+  justify-self: right;
+  color: hsl(245, 75%, 52%);
+  transition: color 0.2s ease-out;
+}
+.change:hover {
+  color: hsla(var(--_hover-color-blue));
+}
+.change:hover {
+  text-decoration: none;
+}
+
+.proceed {
+  cursor: pointer;
+  padding: 1rem 0;
+  color: hsl(225, 100%, 98%);
+  background-color: hsl(245, 75%, 52%);
+  border: none;
+  border-radius: 0.625rem;
+  box-shadow: 0 0.625rem 1rem 0 hsla(var(--_box-shadow-color));
+  transition: background-color 0.2s ease-out;
+}
+.proceed:hover {
+  background-color: hsla(var(--_hover-color-blue));
+}
+
+.cancel {
+  cursor: pointer;
+  align-self: self-start;
+  transition: color 0.2s ease-out;
+}
+.cancel:hover {
+  color: hsl(223, 47%, 23%);
+}
+
+/*# sourceMappingURL=style.css.map */

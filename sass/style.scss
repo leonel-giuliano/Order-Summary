@@ -1,0 +1,159 @@
+@use './base';
+@use './abstracts';
+
+body {
+    width: 100%;
+    min-height: 100dvh;
+    color: map-get(
+        abstracts.$color,
+        neutral,
+        des-blue
+    );
+    background-color: map-get(
+        abstracts.$color,
+        primary,
+        pale-blue
+    );
+}
+
+.grid-flow {
+    display: grid;
+    place-items: center;
+}
+
+.shape-wrapper {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: -1;
+
+    & > * { width: 100%; }
+}
+
+.shape-mobile {
+    @include abstracts.screen() { display: none; }
+}
+
+.shape-desktop {
+    display: none;
+
+    @include abstracts.screen() { display: block; }
+}
+
+.card {
+    --_box-shadow-color: #{join(map-get(
+        abstracts.$color-base,
+        neutral,
+        des-blue
+    ), .3)};
+    --_hover-color-blue: #{join(map-get(
+        abstracts.$color-base,
+        primary,
+        bright-blue
+    ), .825)};
+
+    width: min(22rem, 90%);
+    height: min(40rem, 87.5%);
+    grid-template-rows: 25%;
+    background-color: map-get(
+        abstracts.$color,
+        neutral,
+        palest-blue
+    );
+    border-radius: abstracts.$card-border-radius;
+    box-shadow: 0 .275rem 2rem 0 hsla(var(--_box-shadow-color));
+
+    > * { width: 85%; }
+}
+
+.music-banner {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: abstracts.$card-border-radius abstracts.$card-border-radius 0 0;
+}
+
+.intro {
+    align-items: end;
+    height: 100%;
+    margin-top: .75rem;
+}
+
+.title {
+    color: map-get(
+        abstracts.$color,
+        neutral,
+        dark-blue
+    );
+}
+
+.plan-wrapper {
+    --_pale-blue: #{join(map-get(
+        abstracts.$color-base,
+        primary,
+        pale-blue
+    ), .3)};
+    
+    box-sizing: border-box;
+    justify-items: left;
+    grid-auto-flow: column;
+    padding: 1rem;
+    background-color: hsla(var(--_pale-blue));
+    border-radius: .75rem;
+}
+
+.plan {
+    width: min-content;
+
+    span {
+        color: map-get(
+            abstracts.$color,
+            neutral,
+            dark-blue
+        );
+    }
+}
+
+.change {
+    justify-self: right;
+    color: map-get(
+        abstracts.$color,
+        primary,
+        bright-blue
+    );
+
+    @include abstracts.hover(color, hsla(var(--_hover-color-blue)));
+
+    &:hover { text-decoration: none; }
+}
+
+.proceed {
+    cursor: pointer;
+    padding: 1rem 0;
+    color: map-get(
+        abstracts.$color,
+        neutral,
+        palest-blue
+    );
+    background-color: map-get(
+        abstracts.$color,
+        primary,
+        bright-blue
+    );
+    border: none;
+    border-radius: .625rem;
+    box-shadow: 0 .625rem 1rem 0 hsla(var(--_box-shadow-color));
+
+    @include abstracts.hover(background-color, hsla(var(--_hover-color-blue)));
+}
+
+.cancel {
+    cursor: pointer;
+    align-self: self-start;
+
+    @include abstracts.hover(color, map-get(
+        abstracts.$color,
+        neutral,
+        dark-blue
+    ));
+}

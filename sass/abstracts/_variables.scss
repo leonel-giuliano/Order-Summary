@@ -1,0 +1,39 @@
+@use 'sass:map';
+
+$color-base: (
+    primary: (
+        pale-blue: (225, 100%, 94%),
+        bright-blue: (245, 75%, 52%),
+    ),
+
+    neutral: (
+        palest-blue: (225, 100%, 98%),
+        des-blue: (224, 23%, 55%),
+        dark-blue: (223, 47%, 23%),
+    ),
+);
+
+$color: ();
+
+@each $type, $value in $color-base {
+    @each $pick, $cont in $value {
+        $color: map.deep-merge(
+            $color,
+            ($type: ($pick: hsl(join($cont, (), space))))
+        );
+    }
+}
+
+$font: (
+    size: 16px,
+    family: ('Red Hat Display', sans-serif),
+    weight: (
+        medium: 500,
+        bold: 700,
+        black: 900,
+    ),
+);
+
+$card-border-radius: 1.25rem;
+
+$tran-duration: .2s;

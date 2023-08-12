@@ -1,0 +1,61 @@
+@use '../abstracts/variables';
+
+@font-face {
+    font-family: 'Red Hat Display';
+    font-display: swap;
+    src: local('Red Hat Display'),
+        url('../fonts/redhatdisplay-variablefont_wght-webfont.woff2') format('woff2'),
+        url('../fonts/redhatdisplay-variablefont_wght-webfont.woff') format('woff');
+    font-weight: 100 900;
+}
+
+html {
+    font-size: map-get(
+        variables.$font,
+        size
+    );
+}
+
+:is(
+    .plan span,
+    .change,
+    .proceed,
+    .cancel
+) {
+    font-weight: map-get(
+        variables.$font,
+        weight,
+        bold
+    );
+}
+
+body {
+    font-family: map-get(
+        variables.$font,
+        family
+    );
+    font-weight: map-get(
+        variables.$font,
+        weight,
+        medium
+    );
+    text-align: center;
+}
+
+.title {
+    font-size: 1.5rem;
+    font-weight: map-get(
+        variables.$font,
+        weight,
+        black
+    );
+}
+
+.description {
+    word-spacing: .2rem;
+    line-height: 2rem;
+}
+
+.plan { line-height: 1.5rem; }
+
+.proceed { font: inherit; } 
