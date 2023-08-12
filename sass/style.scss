@@ -106,6 +106,7 @@ body {
     width: min-content;
 
     span {
+        display: inline-block;
         width: max-content;
         color: map-get(
             abstracts.$color,
